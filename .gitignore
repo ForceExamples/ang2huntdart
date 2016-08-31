@@ -1,0 +1,12 @@
+# Dart excludes
+packages
+.project
+.children
+.pub
+*.js
+pubspec.lock
+.idea
+build
+_*.dart
+_*._dart
+_*.html

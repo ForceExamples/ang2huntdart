@@ -1,0 +1,37 @@
+<div>
+  <div id="chat-box" class="pure-u-1-1 well content">
+    <form class="pure-form">
+      <fieldset>
+        <legend class="form-legend">Product Hunt</legend>
+      </fieldset>
+    </form>
+
+    <div class="pure-g" *ngFor="let hunt of hunts">
+      <div class="pure-u-1-1 post">
+        <div class="pure-input-1">
+          <div (click)="update(hunt.key, hunt.value)" class="upvote">
+            <a href="#" class="upvote-link"></a>
+            <span class="vote-count" data-vote-count="">{{hunt.value.point}}</span>
+          </div>
+          <div class="url">
+            <a class="title" target="_blank" href="{{hunt.value.url}}">{{hunt.value.name}}</a>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="input-box" class="pure-u-1-1 content">
+    <form class="pure-form pure-g">
+      <div class="pure-u-1-1" style="color: red;">{{error}}</div>
+      <div class="pure-u-1-2">
+        <input class="pure-input-1" [(ngModel)]="name" placeholder="Product naam">
+      </div>
+      <div class="pure-u-1-2">
+        <input class="pure-input-1" [(ngModel)]="url" placeholder="Url">
+      </div>
+      <button class="pure-u-1-1 pure-button pure-button-primary" (click)="send()">Send</button>
+    </form>
+  </div>
+
+</div>
